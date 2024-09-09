@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Pinterest</title>
+</head>
+<body>
+    <h1>Pinterest Image downloader</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="text" name="link" id="link" required>
+        <button type="submit" value="submit" id="downloadBtn">Download</button>
+    </form>
+    <div id="result">
+        <h2> Output Image: </h2><br>
+        <img id="generated-image"  src="" alt="Generated Image" style="display: none; max-width: 100%; height: auto;">
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('#upload-form').on('submit', function(event){
+                event.preventDefault();
+
+                var formData = new FormData(this);
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/uploadlink/',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response){
+                        console.log(response);
+                         
+                        $.ajax({
+                            type: 'GET',
+                            url: '/media/generated_image.png/',
+                            contentType: 'application/json',
+                            success: function(imageResponse){
+                                console.log(imageResponse);
+                                $('#generated-image').attr('src', '/media/generated_image.png');
+                                $('#generated-image').show();
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
