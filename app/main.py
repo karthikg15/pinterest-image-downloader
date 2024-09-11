@@ -66,3 +66,5 @@ async def get_image():
     return FileResponse("media/generated_image.png")
 
 
+def hello():
+    return "hello"
