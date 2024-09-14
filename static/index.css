@@ -4,26 +4,30 @@
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 nav {
     height: 80px;
-    background: #FF6600;
+    background: #1c1f2b;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0rem calc(100vw -1300px) /2;
 }
+
 .logo{
-    color: #000;
+    color: white;
     font-size: 1.5rem;
     font-weight: bold;
     font-style: italic;
     padding: 0 2rem;
 }
+
 nav a {
     text-decoration: none;
-    color: black;
+    color: white;
     padding: 0 1.5rem;
 }
+
 button {
     padding: 12px 20px;
     font-size: 1rem;
@@ -33,6 +37,7 @@ button {
     cursor: pointer;
     border-radius: 20px;
 }
+
 button:hover {
     background: #fff;
     color: #000;
@@ -40,18 +45,21 @@ button:hover {
 ::placeholder {
     padding-left: 20px;
 }
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 form {
     width: 100%;
     justify-content: center;
     align-items: center;
     display: flex;
 }
+
 input {
     width: 75%;
     height: 39px;
@@ -59,11 +67,13 @@ input {
     border-radius: 20px;
     background: #f3f3f385;
 } 
+
 .out_h2{
     width: 100%;
     padding: 10px 135px;
 
 }
+
 .image-container {
     margin: 0 auto;
     font-size: 1rem;
@@ -75,12 +85,14 @@ input {
     border-radius: 10px;
     position: relative;
 }
+
 .image-container img {
     padding: 10px;
     height: 100%;
     width: 100%;
     object-fit: contain;
 }
+
 #generated-image {
     object-fit: contain;
     padding-top: 10px;

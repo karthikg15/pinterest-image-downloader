@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/index.css">
     <title>Pin Downloads</title>
 </head>
 <body>
-    <h1>Pinterest Image downloader</h1>
-    <form id="upload-form" enctype="multipart/form-data">
-        <input type="text" name="link" id="link" required>
-        <button type="submit" value="submit" id="downloadBtn">Download</button>
-    </form>
+    <nav>
+        <div class="logo">Pin Downloads</div>
+        <div class="nav-items">
+            <a href="/">Home</a>
+            <a href="/">About</a>
+            <a href="/">Contact</a>
+        </div>
+    </nav>
+    <div class="container">
+        <form id="upload-form" enctype="multipart/form-data">
+            <input type="text" name="link" id="link" placeholder="Paste the pinterest link here" required><br>
+            <button type="submit" value="submit" id="downloadBtn">Download</button>
+        </form>
+    </div>
     <div class="out_h2">
         <h2 id="out-img"> Output Image: </h2>
     </div>

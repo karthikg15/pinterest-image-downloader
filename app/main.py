@@ -34,6 +34,8 @@ async def get_basic_form(request: Request):
 @app.post('/uploadlink/')
 async def get_basic_form(request: Request, link: str = Form(...)):
     logging.info("Method has been called")
+    if os.path.exists('media/generated_image.png'):
+        os.remove('media/generated_image.png')
     url = link
     HEADERS = ({'User-Agent':''})
     webpage = requests.get(url, headers=HEADERS)
