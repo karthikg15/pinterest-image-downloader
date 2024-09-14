@@ -65,6 +65,3 @@ async def get_basic_form(request: Request, link: str = Form(...)):
 async def get_image():
     return FileResponse("media/generated_image.png")
 
-
-def hello():
-    return "hello"
