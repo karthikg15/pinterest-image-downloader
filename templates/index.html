@@ -19,14 +19,17 @@
     <div class="container">
         <form id="upload-form" enctype="multipart/form-data">
             <input type="text" name="link" id="link" placeholder="Paste the pinterest link here" required><br>
-            <button type="submit" value="submit" id="downloadBtn">Download</button>
+            <button type="submit" value="submit" id="downloadBtn">Get Image</button>
         </form>
     </div>
     <div class="out_h2">
         <h2 id="out-img"> Output Image: </h2>
     </div>
     <div class="image-container">
-        <img id="generated-image"  src="" alt="Generated Image" style="display: none; max-width: 100%; height: auto;">
+        <img id="generated-image"  src="" alt="Generated Image" style="display: none;">
+        <a href="media\generated_image.png" download class="downloadLink" style="display: none;">
+            <button>Download</button>
+        </a>
     </div>
     <script>
         $(document).ready(function(){
@@ -52,6 +55,7 @@
                                 console.log(imageResponse);
                                 $('#generated-image').attr('src', '/media/generated_image.png');
                                 $('#generated-image').show();
+                                $('.downloadLink').show();
                             }
                         });
                     }
